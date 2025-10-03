@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system with HSL colors, enhanced for attractiveness */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -47,12 +50,19 @@
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
+
     --sidebar-foreground: 240 5.3% 26.1%;
+
     --sidebar-primary: 240 5.9% 10%;
+
     --sidebar-primary-foreground: 0 0% 98%;
+
     --sidebar-accent: 240 4.8% 95.9%;
+
     --sidebar-accent-foreground: 240 5.9% 10%;
+
     --sidebar-border: 220 13% 91%;
+
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -89,7 +99,7 @@
     --border: 142 20% 25%;
     --input: 142 20% 25%;
     --ring: 145 63% 49%;
-
+    
     --sidebar-background: 142 20% 12%;
     --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 145 63% 49%;
@@ -103,7 +113,7 @@
 
 @layer base {
   * {
-    @apply border-border transition-all duration-300;
+    @apply border-border;
   }
 
   body {
@@ -112,43 +122,5 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold;
-  }
-
-  /* Cards with shadow and hover lift */
-  .card {
-    @apply bg-card text-card-foreground rounded-[var(--radius)] shadow-md p-6 mb-6;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Buttons */
-  .btn-primary {
-    @apply bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] px-6 py-3 rounded-lg font-semibold shadow-md transition hover:bg-[hsl(var(--primary-hover))];
-  }
-
-  .btn-secondary {
-    @apply bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] px-6 py-3 rounded-lg font-semibold shadow-md transition hover:bg-[hsl(var(--secondary-hover))];
-  }
-
-  /* Logo hover effects */
-  .logo {
-    @apply transition-transform duration-300 cursor-pointer;
-  }
-  .logo:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 20px hsl(var(--primary)));
-  }
-
-  /* Links / Info text */
-  .read-the-docs {
-    @apply text-[hsl(var(--muted-foreground))] transition-colors duration-300 hover:text-[hsl(var(--primary))] hover:underline;
-  }
-
-  /* Input & forms */
-  input, textarea, select {
-    @apply border-[hsl(var(--input))] rounded-md p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--ring))] focus:border-[hsl(var(--ring))];
   }
 }
